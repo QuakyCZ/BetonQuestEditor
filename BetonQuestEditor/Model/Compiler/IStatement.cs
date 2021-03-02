@@ -1,4 +1,4 @@
-﻿namespace ExampleCodeGenApp.Model.Compiler
+﻿namespace BetonQuestEditorApp.Model.Compiler
 {
     public interface IStatement
     {

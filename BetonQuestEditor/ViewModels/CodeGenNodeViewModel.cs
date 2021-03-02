@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using ExampleCodeGenApp.Views;
+using BetonQuestEditorApp.Views;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.ViewModels
+namespace BetonQuestEditorApp.ViewModels
 {
     public enum NodeType
     {

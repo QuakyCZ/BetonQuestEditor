@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ExampleCodeGenApp.Views;
+using BetonQuestEditorApp.Views;
 using NodeNetwork.Toolkit.Group.AddEndpointDropPanel;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.ViewModels.Nodes
+namespace BetonQuestEditorApp.ViewModels.Nodes
 {
     public class GroupSubnetIONodeViewModel : CodeGenNodeViewModel
     {

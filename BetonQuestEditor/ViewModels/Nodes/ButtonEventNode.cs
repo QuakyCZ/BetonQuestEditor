@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DynamicData;
-using ExampleCodeGenApp.Model.Compiler;
-using ExampleCodeGenApp.Views;
+using BetonQuestEditorApp.Model.Compiler;
+using BetonQuestEditorApp.Views;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.ViewModels.Nodes
+namespace BetonQuestEditorApp.ViewModels.Nodes
 {
     public class ButtonEventNode : CodeGenNodeViewModel
     {

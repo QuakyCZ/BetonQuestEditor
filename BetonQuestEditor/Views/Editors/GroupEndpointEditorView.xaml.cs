@@ -1,10 +1,10 @@
 ﻿using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using System.Windows;
-using ExampleCodeGenApp.ViewModels.Nodes;
+using BetonQuestEditorApp.ViewModels.Nodes;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.Views.Editors
+namespace BetonQuestEditorApp.Views.Editors
 {
     public partial class GroupEndpointEditorView : IViewFor<IGroupEndpointEditorViewModel>
     {

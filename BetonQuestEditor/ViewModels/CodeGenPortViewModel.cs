@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.ViewModels
+namespace BetonQuestEditorApp.ViewModels
 {
     public enum PortType
     {

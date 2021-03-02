@@ -1,9 +1,9 @@
 ﻿using System.Windows;
-using ExampleCodeGenApp.ViewModels;
-using ExampleCodeGenApp.ViewModels.Editors;
+using BetonQuestEditorApp.ViewModels;
+using BetonQuestEditorApp.ViewModels.Editors;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.Views.Editors
+namespace BetonQuestEditorApp.Views.Editors
 {
     public partial class StringValueEditorView : IViewFor<StringValueEditorViewModel>
     {

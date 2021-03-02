@@ -5,7 +5,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
-    <StartupObject>ExampleCodeGenApp.App</StartupObject>
+    <StartupObject>BetonQuestEditorApp.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Resources\grid.png" />

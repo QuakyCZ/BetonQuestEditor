@@ -6,8 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using DynamicData;
-using ExampleCodeGenApp.Model;
-using ExampleCodeGenApp.ViewModels.Nodes;
+using BetonQuestEditorApp.Model;
+using BetonQuestEditorApp.ViewModels.Nodes;
 using NodeNetwork.Toolkit.BreadcrumbBar;
 using NodeNetwork.Toolkit.Group;
 using NodeNetwork.Toolkit.Layout;
@@ -17,7 +17,7 @@ using NodeNetwork.Utilities;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.ViewModels
+namespace BetonQuestEditorApp.ViewModels
 {
     class NetworkBreadcrumb : BreadcrumbViewModel
     {

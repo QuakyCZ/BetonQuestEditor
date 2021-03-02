@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="ExampleCodeGenApp.Views.CodeGenPortView"
+﻿<UserControl x:Class="BetonQuestEditorApp.Views.CodeGenPortView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ExampleCodeGenApp.ViewModels"
+             xmlns:local="clr-namespace:BetonQuestEditorApp.ViewModels"
              xmlns:views="clr-namespace:NodeNetwork.Views;assembly=NodeNetwork"
-             xmlns:local1="clr-namespace:ExampleCodeGenApp.Views"
+             xmlns:local1="clr-namespace:BetonQuestEditorApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="100">
     <UserControl.Resources>

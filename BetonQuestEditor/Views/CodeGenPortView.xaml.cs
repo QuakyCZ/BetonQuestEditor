@@ -3,10 +3,10 @@ using System.Reactive.Disposables;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using ExampleCodeGenApp.ViewModels;
+using BetonQuestEditorApp.ViewModels;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.Views
+namespace BetonQuestEditorApp.Views
 {
     public partial class CodeGenPortView : IViewFor<CodeGenPortViewModel>
     {

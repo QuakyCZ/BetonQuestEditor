@@ -5,15 +5,15 @@ using System.Reactive;
 using System.Reactive.Linq;
 using System.Text;
 using DynamicData;
-using ExampleCodeGenApp.Views;
-using ExampleCodeGenApp.Views.Editors;
+using BetonQuestEditorApp.Views;
+using BetonQuestEditorApp.Views.Editors;
 using MoreLinq.Extensions;
 using NodeNetwork.Toolkit.Group;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.ViewModels.Nodes
+namespace BetonQuestEditorApp.ViewModels.Nodes
 {
     /// <summary>
     /// A non-generic interface that provides access to the data in GroupEndpointEditorViewModel.

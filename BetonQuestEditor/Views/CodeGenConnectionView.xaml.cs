@@ -13,10 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ExampleCodeGenApp.ViewModels;
+using BetonQuestEditorApp.ViewModels;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.Views
+namespace BetonQuestEditorApp.Views
 {
     public partial class CodeGenConnectionView : IViewFor<CodeGenConnectionViewModel>
     {

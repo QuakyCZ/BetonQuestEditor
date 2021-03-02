@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace ExampleCodeGenApp.Views.Converters
+namespace BetonQuestEditorApp.Views.Converters
 {
     /// <summary>
     /// Given an object o and a type t, return Visible if o is of type t, else return Collapsed.

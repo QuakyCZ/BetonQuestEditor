@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExampleCodeGenApp.Model.Compiler;
-using ExampleCodeGenApp.Model.Compiler.Error;
+using BetonQuestEditorApp.Model.Compiler;
+using BetonQuestEditorApp.Model.Compiler.Error;
 
-namespace ExampleCodeGenApp.Model
+namespace BetonQuestEditorApp.Model
 {
     public class VariableReference<T> : ITypedExpression<T>
     {

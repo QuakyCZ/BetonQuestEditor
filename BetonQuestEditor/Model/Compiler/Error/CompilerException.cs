@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExampleCodeGenApp.Model.Compiler.Error
+namespace BetonQuestEditorApp.Model.Compiler.Error
 {
     public class CompilerException : Exception
     {

@@ -8,7 +8,7 @@ using NodeNetwork.ViewModels;
 using NodeNetwork.Views;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.ViewModels
+namespace BetonQuestEditorApp.ViewModels
 {
     public class CodeGenOutputViewModel<T> : ValueNodeOutputViewModel<T>
     {

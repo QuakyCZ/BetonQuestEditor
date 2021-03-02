@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using NodeNetwork;
 
-namespace ExampleCodeGenApp
+namespace BetonQuestEditorApp
 {
     public partial class App : Application
     {

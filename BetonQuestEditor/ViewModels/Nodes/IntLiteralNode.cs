@@ -5,15 +5,15 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DynamicData;
-using ExampleCodeGenApp.Model;
-using ExampleCodeGenApp.Model.Compiler;
-using ExampleCodeGenApp.ViewModels.Editors;
-using ExampleCodeGenApp.Views;
+using BetonQuestEditorApp.Model;
+using BetonQuestEditorApp.Model.Compiler;
+using BetonQuestEditorApp.ViewModels.Editors;
+using BetonQuestEditorApp.Views;
 using NodeNetwork.Toolkit.ValueNode;
 using NodeNetwork.ViewModels;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.ViewModels.Nodes
+namespace BetonQuestEditorApp.ViewModels.Nodes
 {
     public class IntLiteralNode : CodeGenNodeViewModel
     {

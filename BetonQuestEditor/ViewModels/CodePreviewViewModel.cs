@@ -4,11 +4,11 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExampleCodeGenApp.Model.Compiler;
-using ExampleCodeGenApp.Model.Compiler.Error;
+using BetonQuestEditorApp.Model.Compiler;
+using BetonQuestEditorApp.Model.Compiler.Error;
 using ReactiveUI;
 
-namespace ExampleCodeGenApp.ViewModels
+namespace BetonQuestEditorApp.ViewModels
 {
     public class CodePreviewViewModel : ReactiveObject
     {
