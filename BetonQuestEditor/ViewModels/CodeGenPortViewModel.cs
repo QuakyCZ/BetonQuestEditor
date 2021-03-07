@@ -10,7 +10,7 @@ namespace BetonQuestEditorApp.ViewModels
 {
     public enum PortType
     {
-        Execution, Integer, String
+        Execution, Integer, String, Boolean
     }
 
     public class CodeGenPortViewModel : PortViewModel

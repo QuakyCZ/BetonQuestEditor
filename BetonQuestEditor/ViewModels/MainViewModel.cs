@@ -65,11 +65,12 @@ namespace BetonQuestEditorApp.ViewModels
             ButtonEventNode eventNode = new ButtonEventNode {CanBeRemovedByUser = false};
             Network.Nodes.Add(eventNode);
 
-            //NodeList.AddNodeType(() => new ButtonEventNode());
+            NodeList.AddNodeType(() => new ButtonEventNode());
             NodeList.AddNodeType(() => new ForLoopNode());
             NodeList.AddNodeType(() => new IntLiteralNode());
             NodeList.AddNodeType(() => new PrintNode());
             NodeList.AddNodeType(() => new TextLiteralNode());
+            NodeList.AddNodeType(() => new QuestNode()); // Add QuestNode to the list of available nodes
 
             var codeObservable = eventNode.OnClickFlow.Values.Connect().Select(_ => new StatementSequence(eventNode.OnClickFlow.Values.Items));
             codeObservable.BindTo(this, vm => vm.CodePreview.Code);

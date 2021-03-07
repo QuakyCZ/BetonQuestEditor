@@ -31,6 +31,7 @@ namespace BetonQuestEditorApp.Views
         public const String ExecutionPortTemplateKey = "ExecutionPortTemplate";
         public const String IntegerPortTemplateKey = "IntegerPortTemplate";
         public const String StringPortTemplateKey = "StringPortTemplate"; 
+        public const String BoolPortTemplateKey = "BoolPortTemplate";
         #endregion
 
         public CodeGenPortView()
@@ -57,6 +58,7 @@ namespace BetonQuestEditorApp.Views
                 case PortType.Execution: return (ControlTemplate) Resources[ExecutionPortTemplateKey];
                 case PortType.Integer: return (ControlTemplate) Resources[IntegerPortTemplateKey];
                 case PortType.String: return (ControlTemplate) Resources[StringPortTemplateKey];
+                case PortType.Boolean: return (ControlTemplate)Resources[BoolPortTemplateKey];
                 default: throw new Exception("Unsupported port type");
             }
         }
