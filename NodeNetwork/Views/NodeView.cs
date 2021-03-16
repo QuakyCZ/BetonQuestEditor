@@ -29,6 +29,7 @@ namespace NodeNetwork.Views
     [TemplatePart(Name = nameof(CollapseButton), Type = typeof(ArrowToggleButton))]
     [TemplatePart(Name = nameof(NameLabel), Type = typeof(TextBlock))]
     [TemplatePart(Name = nameof(HeaderIcon), Type = typeof(Image))]
+    [TemplatePart(Name = nameof(HeaderIconButton), Type = typeof(Button))]
     [TemplatePart(Name = nameof(InputsList), Type = typeof(ItemsControl))]
     [TemplatePart(Name = nameof(OutputsList), Type = typeof(ItemsControl))]
     [TemplatePart(Name = nameof(EndpointGroupsList), Type = typeof(ItemsControl))]
@@ -85,6 +86,14 @@ namespace NodeNetwork.Views
             set => SetValue(ArrowSizeProperty, value);
         }
 
+        public static readonly DependencyProperty HeaderIconSizeProperty = DependencyProperty.Register(nameof(HeaderIconSize), typeof(double), typeof(NodeView));
+        public double HeaderIconSize
+        {
+            get => (double)GetValue(HeaderIconSizeProperty);
+            set => SetValue(HeaderIconSizeProperty, value);
+        }
+
+
         public static readonly DependencyProperty TitleFontFamilyProperty = DependencyProperty.Register(nameof(TitleFontFamily), typeof(FontFamily), typeof(NodeView));
         public FontFamily TitleFontFamily
         {
@@ -124,6 +133,7 @@ namespace NodeNetwork.Views
 		private ArrowToggleButton CollapseButton { get; set; }
         private TextBlock NameLabel { get; set; }
         private Image HeaderIcon { get; set; }
+        private Button HeaderIconButton { get; set; }
         private ItemsControl InputsList { get; set; }
         private ItemsControl OutputsList { get; set; }
         private ItemsControl EndpointGroupsList { get; set; }
@@ -145,6 +155,7 @@ namespace NodeNetwork.Views
             CollapseButton = GetTemplateChild(nameof(CollapseButton)) as ArrowToggleButton;
             NameLabel = GetTemplateChild(nameof(NameLabel)) as TextBlock;
             HeaderIcon = GetTemplateChild(nameof(HeaderIcon)) as Image;
+            HeaderIconButton = GetTemplateChild(nameof(HeaderIconButton)) as Button;
             InputsList = GetTemplateChild(nameof(InputsList)) as ItemsControl;
             OutputsList = GetTemplateChild(nameof(OutputsList)) as ItemsControl;
             EndpointGroupsList = GetTemplateChild(nameof(EndpointGroupsList)) as ItemsControl;
@@ -188,6 +199,10 @@ namespace NodeNetwork.Views
                     .BindTo(this, v => v.ViewModel.Size).DisposeWith(d);
 
                 this.OneWayBind(ViewModel, vm => vm.HeaderIcon, v => v.HeaderIcon.Source, img => img?.ToNative()).DisposeWith(d);
+
+                this.OneWayBind(ViewModel, vm => vm.HeaderIconButton, v => v.HeaderIconButton.Command).DisposeWith(d);
+
+
             });
         }
 

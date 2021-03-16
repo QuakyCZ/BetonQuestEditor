@@ -11,6 +11,7 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using DynamicData;
 using DynamicData.Binding;
 
@@ -80,6 +81,20 @@ namespace NodeNetwork.ViewModels
             set => this.RaiseAndSetIfChanged(ref _headerIcon, value);
         }
         private IBitmap _headerIcon;
+        #endregion
+
+        #region HeaderIconButton
+        /// <summary>
+        /// The icon displayed in the header of the node.
+        /// If this is null, no icon is displayed.
+        /// In the default view, this icon is displayed at the top of the node.
+        /// </summary>
+        public ICommand HeaderIconButton
+        {
+            get => _headerIconButton;
+            set => this.RaiseAndSetIfChanged(ref _headerIconButton, value);
+        }
+        private ICommand _headerIconButton ;
         #endregion
 
         #region Inputs

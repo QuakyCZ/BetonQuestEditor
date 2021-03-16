@@ -12,6 +12,7 @@
         <Setter Property="BorderBrush" Value="Orange"/>
         <Setter Property="CornerRadius" Value="4"/>
         <Setter Property="ArrowSize" Value="20"/>
+        <Setter Property="HeaderIconSize" Value="40"/>
         <Setter Property="EndpointsStackingOrientation" Value="Vertical"/>
         <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="Template">
@@ -102,7 +103,9 @@
                                 <StackPanel>
                                     <Canvas x:Name="HeaderTopMargin" Width="auto" Height="10"/>
                                     <DockPanel>
-                                        <Image x:Name="HeaderIcon" MaxWidth="{TemplateBinding ArrowSize}" MaxHeight="{TemplateBinding ArrowSize}" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                        <Button x:Name="HeaderIconButton"  Command="" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+                                            <Image x:Name="HeaderIcon" MaxWidth="{TemplateBinding HeaderIconSize}" MaxHeight="{TemplateBinding HeaderIconSize}"/>
+                                        </Button>
                                         <TextBlock x:Name="NameLabel" TextWrapping="Wrap" Background="Transparent" Foreground="{TemplateBinding Foreground}" DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Center"
                                                    FontFamily="{TemplateBinding TitleFontFamily}" FontSize="{TemplateBinding TitleFontSize}" Margin="10,0,0,0"/>
                                         <controls:ArrowToggleButton x:Name="CollapseButton" Width="{TemplateBinding ArrowSize}" Height="{TemplateBinding ArrowSize}" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,10,0"/>
