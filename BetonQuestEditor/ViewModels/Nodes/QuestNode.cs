@@ -13,8 +13,6 @@ using NodeNetwork.Toolkit.ValueNode;
 using System.Windows.Media.Imaging;
 using ReactiveUI;
 using System.IO;
-//using System.Drawing;
-using System.Windows.Input;
 
 namespace BetonQuestEditorApp.ViewModels.Nodes
 {
@@ -53,7 +51,7 @@ namespace BetonQuestEditorApp.ViewModels.Nodes
         // ViewModel for the button
         public BoolValueEditorViewModel BoolEditor { get; } = new BoolValueEditorViewModel();
 
-        //public GroupEndpointEditorViewModel<int> EndpointEditor { get; } = new GroupEndpointEditorViewModel<int>();
+        public EditableLabelEditorViewModel<string> EditableLabelEditor { get; } = new EditableLabelEditorViewModel<string>("defName");
 
         public ValueNodeInputViewModel<ITypedExpression<string>> Text { get; }
 
@@ -125,7 +123,10 @@ namespace BetonQuestEditorApp.ViewModels.Nodes
 
             Text = new CodeGenInputViewModel<ITypedExpression<string>>(PortType.String)
             {
-                Name = "Text"
+                //Name = "Node name",
+                Editor = EditableLabelEditor,//,
+                               
+                //Value = EditableLabelEditor.ValueChanged.Select(v => new BoolLiteral{ Value = v })
             };
             this.Inputs.Add(Text);
 
