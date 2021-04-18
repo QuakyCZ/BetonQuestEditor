@@ -51,6 +51,17 @@ namespace BetonQuestEditorApp.Views
         private static int _npcValue;  //Property, because we need it in different places
         public static int NpcValue { get { return _npcValue; } set { _npcValue = value; } }
 
+        /// <summary>
+        /// Window_Loaded handler
+        /// Postitions the window according to the mouse pointer position
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            (sender as Window).Top = Mouse.GetPosition(null).Y + 5;
+            (sender as Window).Left = Mouse.GetPosition(null).X + 5;
+        }
 
         /// <summary>
         /// Selects new NPC using datagrid
@@ -68,8 +79,13 @@ namespace BetonQuestEditorApp.Views
             container = new Window() 
             {
                 SizeToContent = SizeToContent.WidthAndHeight,
-                Content = contentControl
+                Content = contentControl,
+                WindowStartupLocation = WindowStartupLocation.Manual,
+                Owner = Application.Current.MainWindow,
+                WindowStyle = WindowStyle.ToolWindow
             };
+
+            container.Loaded += new RoutedEventHandler(Window_Loaded);
 
             // Add Event handler to the datagrid
             Style rowStyle = new Style(typeof(DataGridRow));
