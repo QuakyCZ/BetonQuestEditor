@@ -34,6 +34,8 @@ namespace BetonQuestEditorApp.Views.Editors
         {
             InitializeComponent();
 
+            Button.Content = "Add / Remove (Ctrl)";
+
             this.WhenActivated(d => d(
                 this.Bind(ViewModel, vm => vm.Value, v => v.Button.IsPressed)
             ));

@@ -41,7 +41,8 @@ namespace BetonQuestEditorApp.ViewModels.Nodes
 
         public ValueNodeInputViewModel<ITypedExpression<string>> Text { get; }
 
-        public ValueNodeOutputViewModel<ITypedExpression<string>> Output { get; }
+        public ValueNodeOutputViewModel<ITypedExpression<string>> Output { get; set; }
+        public ValueNodeOutputViewModel<ITypedExpression<bool>> OutputB { get; } // Output viewModel for the boolean type
 
 
         /// <summary>
@@ -63,8 +64,59 @@ namespace BetonQuestEditorApp.ViewModels.Nodes
             }
         }
 
+
+        /// <summary>
+        /// Adds yet another output port to the node
+        /// </summary>
+        public void OutputAdd()
+        {
+            Output = new CodeGenOutputViewModel<ITypedExpression<string>>(PortType.String)
+            {
+                Name = "Value" + this.Outputs.Items.Count(), // number the names of the nodes accordingly
+                Editor = ValueEditor,
+                Value = ValueEditor.ValueChanged.Select(v => new StringLiteral { Value = v })
+            };
+            this.Outputs.Add(Output);
+        }
+
+        /// <summary>
+        /// Removes output port from node
+        /// </summary>
+        public void OutputRemove()
+        {
+            if (this.Outputs.Items.Last() != this.Outputs.Items.First()) // Don't remove the button itself as it its the first output
+                this.Outputs.Remove(this.Outputs.Items.Last());
+        }
+
+        /// <summary>
+        /// Adds or removes output ports to the node.
+        /// Adds port on regular click
+        /// Removes port on click while either the left or the right Ctrl key is held down
+        /// 
+        /// Fires only when button is pressed down. 
+        /// </summary>
+        /// <param name="isPressed">State of the the button</param>
+        private void ManageOutputs(bool isPressed)
+        {
+            if (isPressed) // The release of the button is ignored
+            {
+                bool ctrlPressed = System.Windows.Input.Keyboard.IsKeyDown(System.Windows.Input.Key.LeftCtrl) || System.Windows.Input.Keyboard.IsKeyDown(System.Windows.Input.Key.RightCtrl);
+                if (ctrlPressed)
+                {
+                    // Remove output
+                    OutputRemove();
+                }
+                else
+                {
+                    // Add output
+                    OutputAdd();
+                }
+            }
+        }
+
         public QuestNode() : base(NodeType.Literal)
         {
+
             this.Name = NPCChooseEditor.NpcValue.Name;
 
             // HeaderIconButton action
@@ -77,14 +129,15 @@ namespace BetonQuestEditorApp.ViewModels.Nodes
             // Watch models selected value for change. Once changed, update the nodes icon
             this.WhenAnyValue(x => x.NPCChooseEditor.NpcValue).Subscribe(name => { SelectNPC(); });
 
-            // Button; TODO make button do some usefull job
-            Output = new CodeGenOutputViewModel<ITypedExpression<string>>(PortType.Boolean)
+            OutputB = new CodeGenOutputViewModel<ITypedExpression<bool>>(PortType.Boolean)
             {
-                Name = "ValueB",
-                Editor = BoolEditor//,
-                //Value = BoolEditor.ValueChanged.Select(v => new BoolLiteral{ Value = v })
+                Name = "Add / Remove (w/ Ctrl) Output",
+                Editor = BoolEditor,
+                Value = BoolEditor.ValueChanged.Select(v => new BoolLiteral { Value = v }),
             };
-            this.Outputs.Add(Output);
+            this.Outputs.Add(OutputB);
+            this.WhenAnyValue(x => x.BoolEditor.Value).Subscribe(x => ManageOutputs(x)); // Subcribe to every change of the state of the button
+
 
             Text = new CodeGenInputViewModel<ITypedExpression<string>>(PortType.String)
             {
@@ -101,18 +154,11 @@ namespace BetonQuestEditorApp.ViewModels.Nodes
             };
             this.Outputs.Add(Output);
 
+
             Output = new CodeGenOutputViewModel<ITypedExpression<string>>(PortType.String)
             {
                 Name = "Value2",
                 Editor = ValueEditor1,
-                Value = ValueEditor.ValueChanged.Select(v => new StringLiteral { Value = v })
-            };
-            this.Outputs.Add(Output);
-
-            Output = new CodeGenOutputViewModel<ITypedExpression<string>>(PortType.String)
-            {
-                Name = "Value3",
-                Editor = ValueEditor2,
                 Value = ValueEditor.ValueChanged.Select(v => new StringLiteral { Value = v })
             };
             this.Outputs.Add(Output);

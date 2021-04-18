@@ -18,7 +18,7 @@ namespace BetonQuestEditorApp.Model
         {
             // TODO: return something meaningful
 
-            return $"Juhuuu"; //\"{Value}\""; // Dummy output
+            return $"\"{Value}\"";
         }
     }
 }
